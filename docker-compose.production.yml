@@ -6,22 +6,6 @@ volumes:
   media:
 
 services:
-  db:
-    image: postgres:13
-    env_file: .env
-    volumes:
-      - pg_data:/var/lib/postgresql/data
-  backend:
-    image: siberianfalcon/kittygram_backend
-    env_file: .env
-    volumes:
-      - static:/backend_static
-  frontend:
-    env_file: .env
-    image: siberianfalcon/kittygram_frontend
-    command: cp -r /app/build/. /frontend_static/
-    volumes:
-      - static:/static
   gateway:
     image: siberianfalcon/kittygram_nginx
     env_file: .env
@@ -30,3 +14,19 @@ services:
     volumes:
       - static:/static
       - media:/media
+  backend:
+    image: siberianfalcon/kittygram_backend
+    env_file: .env
+    volumes:
+      - static:/backend_static
+  db:
+    image: postgres:13
+    env_file: .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  frontend:
+    env_file: .env
+    image: siberianfalcon/kittygram_frontend
+    command: cp -r /app/build/. /frontend_static/
+    volumes:
+      - static:/static

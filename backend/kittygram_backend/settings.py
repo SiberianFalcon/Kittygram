@@ -11,12 +11,13 @@ HOST_ADRESS_1 = os.getenv('HOST_ADRESS_1')
 HOST_ADRESS_2 = os.getenv('HOST_ADRESS_2')
 HOST_ADRESS_3 = os.getenv('HOST_ADRESS_3')
 HOST_ADRESS_4 = os.getenv('HOST_ADRESS_4')
+SEC_KEY = os.getenv('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+SECRET_KEY = SEC_KEY
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [HOST_ADRESS_1, HOST_ADRESS_2, HOST_ADRESS_3, HOST_ADRESS_4]
 
