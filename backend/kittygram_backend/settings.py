@@ -11,7 +11,7 @@ HOST_ADRESS_1 = os.getenv('HOST_ADRESS_1')
 HOST_ADRESS_2 = os.getenv('HOST_ADRESS_2')
 HOST_ADRESS_3 = os.getenv('HOST_ADRESS_3')
 HOST_ADRESS_4 = os.getenv('HOST_ADRESS_4')
-SEC_KEY = os.getenv('SECRET_KEY')
+SEC_KEY = os.getenv('SECRET_KEY', default=True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
