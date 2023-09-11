@@ -12,6 +12,7 @@ services:
     ports:
       - 9000:80
     volumes:
+      - static:/backend_static
       - static:/static
       - media:/media
   backend:
