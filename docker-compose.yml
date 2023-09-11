@@ -12,14 +12,15 @@ services:
     ports:
       - 9000:80
     volumes:
-      - static:/app/backend_static
+      - static:/backend_static
       - static:/static
-      - media:/media
+      - media:/app/media
   backend:
     image: siberianfalcon/kittygram_backend
     env_file: .env
     volumes:
-      - static:/app/backend_static
+      - static:/backend_static
+      - media:/app/media
     depends_on:
       - gateway
   db:
