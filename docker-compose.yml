@@ -12,15 +12,14 @@ services:
     ports:
       - 9000:80
     volumes:
-      - static:/backend_static
       - static:/static
-      - media:/app/media
+      - media:/app/media/
   backend:
     image: siberianfalcon/kittygram_backend
     env_file: .env
     volumes:
-      - static:/backend_static
-      - media:/app/media
+      - static:/static/
+      - media:/app/media/
     depends_on:
       - gateway
   db:
@@ -28,9 +27,6 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
-    depends_on:
-      - gateway
-      - backend
   frontend:
     env_file: .env
     image: siberianfalcon/kittygram_frontend
