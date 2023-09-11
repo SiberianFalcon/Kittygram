@@ -12,7 +12,7 @@ services:
     ports:
       - 9000:80
     volumes:
-      - static:/backend_static
+      - static:/app/backend_static
       - static:/static
       - media:/media
   backend:
@@ -20,8 +20,6 @@ services:
     env_file: .env
     volumes:
       - static:/app/backend_static
-      - static:/static
-      - media:/media
     depends_on:
       - gateway
   db:
